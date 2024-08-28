@@ -95,3 +95,24 @@ button {
   margin-top: 32px;
   padding: 0 14px;
 }
+
+/* Offer product */
+
+.offer-product {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.product img {
+  height: 300px;
+  width: 200px;
+  object-fit: cover;
+}
