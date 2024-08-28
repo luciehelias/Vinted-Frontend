@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Pages/Home";
 import Offer from "./Pages/Offer";
+import Header from "./Components/Header";
 
 const App = () => {
   const [data, setData] = useState();
@@ -25,7 +26,17 @@ const App = () => {
     };
     fetchData();
   }, []);
-  return isLoading ? <span>En cours de chargement...</span> : <></>;
+  return isLoading ? (
+    <span>En cours de chargement...</span>
+  ) : (
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/offers/:id" element={<Offer />} />
+      </Routes>
+    </Router>
+  );
 };
 
 export default App;
