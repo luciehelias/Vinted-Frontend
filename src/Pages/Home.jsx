@@ -40,7 +40,7 @@ const Home = () => {
               <>
                 <div className="product">
                   {/* <img src={offer.owner.account.avatar.url} alt="image" /> */}
-                  <h2>{offer.owner.account.username}</h2>
+                  {/* <h2>{offer.owner.account.username}</h2> */}
                   <img src={offer.product_image.url} alt="image" />
                   <span>{offer.product_price}€</span>
                   {offer.product_details.map((product) => {
