@@ -1,0 +1,43 @@
+.container-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.email,
+.password {
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #fcced3;
+  width: 250px;
+  height: 35px;
+  font-size: 16px;
+  opacity: 50%;
+}
+
+.connect-button {
+  border-radius: 5px;
+  border: 1px solid #2bb1ba;
+  background-color: #2bb1ba;
+  color: white;
+  padding: 10px 20px;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+p {
+  color: #2bb1ba;
+  font-size: 14px;
+}

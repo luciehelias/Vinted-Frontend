@@ -36,6 +36,7 @@ button {
   color: #2bb1ba;
   padding: 5px 20px;
   margin-right: 20px;
+  cursor: pointer;
 }
 
 .user-sale {

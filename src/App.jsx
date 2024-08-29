@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./Pages/Home";
 import Offer from "./Pages/Offer";
 import Header from "./Components/Header";
+import Login from "./Pages/Login";
+import Signup from "./Pages/Signup";
 
 const App = () => {
   const [data, setData] = useState();
@@ -34,6 +36,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offers/:id" element={<Offer />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
