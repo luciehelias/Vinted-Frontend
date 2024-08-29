@@ -2,6 +2,7 @@ import bannière from "../assets/bannière.jpg";
 
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [data, setData] = useState();
@@ -35,26 +36,34 @@ const Home = () => {
       </div>
       <div className="home-offers">
         <div className="offer-product">
-          {data.offers.map((offer) => {
-            return (
-              <>
-                <div className="product">
-                  {/* <img src={offer.owner.account.avatar.url} alt="image" /> */}
-                  {/* <h2>{offer.owner.account.username}</h2> */}
-                  <img src={offer.product_image.url} alt="image" />
-                  <span>{offer.product_price}€</span>
-                  {offer.product_details.map((product) => {
-                    return (
-                      <>
-                        <h2>{product.TAILLE}</h2>
-                        <h2>{product.MARQUE}</h2>
-                      </>
-                    );
-                  })}
+          {data.offers.map((offer) => (
+            <Link to={"/offers/" + offer._id} key={offer._id} className="link">
+              <div className="product">
+                <div className="owner-info">
+                  <img
+                    src={offer.owner.account.avatar.url}
+                    alt="image"
+                    className="owner"
+                  />
+                  <h2>{offer.owner.account.username}</h2>
                 </div>
-              </>
-            );
-          })}
+                <img
+                  src={offer.product_image.url}
+                  alt="image"
+                  className="product-image"
+                />
+                <span>{offer.product_price}€</span>
+                {offer.product_details.map((product) => {
+                  return (
+                    <>
+                      <h2>{product.TAILLE}</h2>
+                      <h2>{product.MARQUE}</h2>
+                    </>
+                  );
+                })}
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </>
