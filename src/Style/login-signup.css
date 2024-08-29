@@ -1,14 +1,29 @@
-.container-login {
+.container-login,
+.container-signup {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 40px;
+  width: 240px;
 }
 
-h2 {
+.container-SL {
+  display: flex;
+  justify-content: center;
+}
+
+.container-SL h2 {
   font-size: 24px;
   margin-bottom: 30px;
+}
+
+.container-SL p {
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #ababab;
+  line-height: 1.25;
 }
 
 form {
@@ -16,8 +31,21 @@ form {
   flex-direction: column;
 }
 
+label {
+  color: #8f8f8f;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+label input {
+  margin-right: 20px;
+  transform: scale(2);
+}
+
 .email,
-.password {
+.password,
+.username {
   margin-bottom: 20px;
   border: none;
   border-bottom: 1px solid #fcced3;
@@ -37,7 +65,7 @@ form {
   font-size: 16px;
 }
 
-p {
+.container-SL span {
   color: #2bb1ba;
   font-size: 14px;
 }
