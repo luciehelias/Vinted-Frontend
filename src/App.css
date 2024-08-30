@@ -34,7 +34,16 @@ button {
 .user-connect {
   background-color: white;
   color: #2bb1ba;
-  padding: 5px 20px;
+  padding: 10px 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.user-disconnect {
+  background-color: #c42161;
+  border: none;
+  color: white;
+  padding: 10px 20px;
   margin-right: 20px;
   cursor: pointer;
 }
@@ -42,7 +51,7 @@ button {
 .user-sale {
   background-color: #2bb1ba;
   color: white;
-  padding: 5px;
+  padding: 10px;
   margin-left: 40px;
 }
 

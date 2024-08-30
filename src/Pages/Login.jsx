@@ -1,27 +1,22 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
-
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "../Style/login-signup.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleEmailChange = (event) => {
-    const value = event.target.value;
-    setEmail(value);
-  };
-
-  const handlePasswordChange = (event) => {
-    const value = event.target.value;
-    setPassword(value);
-  };
+  const handleEmailChange = (e) => setEmail(e.target.value);
+  const handlePasswordChange = (e) => setPassword(e.target.value);
 
   const handleLogin = async () => {
+    e.preventDefault();
     setIsLoading(true);
     try {
       const response = await axios.post(
@@ -31,11 +26,12 @@ const Login = () => {
           password,
         }
       );
-      setData(response.data);
+
       setIsLoading(false);
-      console.log(response);
+      Cookies.set("token", response.data.token, { expires: 7 });
+      navigate("/");
     } catch (error) {
-      console.log(error.response.data.message);
+      console.log(error);
       setIsLoading(false);
     }
   };
@@ -60,6 +56,7 @@ const Login = () => {
             className="password"
           />
           <button
+            type="submit"
             onClick={handleLogin}
             disabled={isLoading}
             className="connect-button"

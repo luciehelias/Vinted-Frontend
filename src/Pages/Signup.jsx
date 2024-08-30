@@ -1,46 +1,41 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
-
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [newsLetter, setNewsLetter] = useState(false);
+  const navigate = useNavigate();
 
-  const handleUsernameChange = (event) => {
-    const value = event.target.value;
-    setUsername(value);
-  };
+  const handleUsernameChange = (e) => setUsername(e.target.value);
+  const handleEmailChange = (e) => setEmail(e.target.value);
+  const handlePasswordChange = (e) => setPassword(e.target.valueue);
+  const handleNewsLetter = () => setNewsLetter(!newsLetter);
 
-  const handleEmailChange = (event) => {
-    const value = event.target.value;
-    setEmail(value);
-  };
-
-  const handlePasswordChange = (event) => {
-    const value = event.target.value;
-    setPassword(value);
-  };
-
-  const handleLogin = async () => {
+  const handleSignUp = async () => {
+    e.preventDefault();
     setIsLoading(true);
     try {
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
         {
-          email,
-          username,
-          password,
+          email: email,
+          username: username,
+          password: password,
+          newsLetter: newsLetter,
         }
       );
-      setData(response.data);
+
       setIsLoading(false);
-      console.log(response);
+      Cookies.set("token", response.data.token, { expires: 7 });
+      navigate("/");
     } catch (error) {
-      console.log(error.response.data.message);
+      console.log(error.message);
       setIsLoading(false);
     }
   };
@@ -72,7 +67,12 @@ const Signup = () => {
             className="password"
           />
           <label>
-            <input type="checkBox" className="checkbox" />
+            <input
+              type="checkBox"
+              checked={newsLetter}
+              onChange={handleNewsLetter}
+              className="checkbox"
+            />
             S'inscrire à notre newsletter
           </label>
           <p>
@@ -81,7 +81,8 @@ const Signup = () => {
             avoir au moins 18 ans.
           </p>
           <button
-            onClick={handleLogin}
+            type="submit"
+            onClick={handleSignUp}
             disabled={isLoading}
             className="connect-button"
           >
