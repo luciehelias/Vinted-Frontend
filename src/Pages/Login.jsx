@@ -9,6 +9,8 @@ import "../Style/login-signup.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const navigate = useNavigate();
 
   const handleEmailChange = (e) => setEmail(e.target.value);
@@ -29,7 +31,17 @@ const Login = () => {
       Cookies.set("token", response.data.token, { expires: 7 });
       navigate("/");
     } catch (error) {
-      console.log(error);
+      if (error.response.data.message === "User not found") {
+        setErrorMessage(
+          "L'utilisateur n'existe pas, merci de vérifier vos champs !"
+        );
+      } else if (error.response.data.error === "Unauthorized") {
+        setErrorMessage(
+          "L'utilisateur n'existe pas, merci de vérifier vos champs !"
+        );
+      } else {
+        setErrorMessage("Une erreur est survenue, veuillez rafraîchir la page");
+      }
     }
   };
 
@@ -60,6 +72,7 @@ const Login = () => {
             Se connecter
           </button>
         </form>
+        {errorMessage && <p style={{ color: "red" }}> {errorMessage}</p>}
         <Link to={"/signup"} className="link">
           <span>Pas encore de compte, inscris-toi !</span>
         </Link>
