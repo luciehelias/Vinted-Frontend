@@ -1,6 +1,6 @@
 import axios from "axios";
 import Cookies from "js-cookie";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +8,6 @@ const Signup = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
   const [newsLetter, setNewsLetter] = useState(false);
   const navigate = useNavigate();
 
@@ -17,9 +16,8 @@ const Signup = () => {
   const handlePasswordChange = (e) => setPassword(e.target.valueue);
   const handleNewsLetter = () => setNewsLetter(!newsLetter);
 
-  const handleSignUp = async () => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
     try {
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
@@ -31,12 +29,10 @@ const Signup = () => {
         }
       );
 
-      setIsLoading(false);
       Cookies.set("token", response.data.token, { expires: 7 });
       navigate("/");
     } catch (error) {
-      console.log(error.message);
-      setIsLoading(false);
+      console.log(error);
     }
   };
 
@@ -83,10 +79,9 @@ const Signup = () => {
           <button
             type="submit"
             onClick={handleSignUp}
-            disabled={isLoading}
             className="connect-button"
           >
-            {isLoading ? "En cours de chargement..." : "S'inscrire"}
+            S'inscrire
           </button>
         </form>
         <Link to={"/login"} className="link">
