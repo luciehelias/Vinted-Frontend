@@ -20,8 +20,6 @@ const Header = () => {
     setIsLogIn(token ? true : false);
   }, [token]);
 
-  // console.log(token);
-
   return (
     <>
       <div className="header">
