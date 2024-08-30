@@ -9,6 +9,7 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newsLetter, setNewsLetter] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const handleUsernameChange = (e) => setUsername(e.target.value);
@@ -18,6 +19,7 @@ const Signup = () => {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
+    setErrorMessage("");
     try {
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
@@ -33,6 +35,13 @@ const Signup = () => {
       navigate("/");
     } catch (error) {
       console.log(error);
+      if (error.response.status === 409) {
+        setErrorMessage("Cet email est déjà utilisé !");
+      } else if (error.response.data.message === "Missing parameters") {
+        setErrorMessage("Veuillez remplir tous les champs !");
+      } else {
+        setErrorMessage("Une erreur est survenue, veuillez rafraîchir la page");
+      }
     }
   };
 
@@ -84,6 +93,7 @@ const Signup = () => {
             S'inscrire
           </button>
         </form>
+        {errorMessage && <p style={{ color: "red" }}> {errorMessage}</p>}
         <Link to={"/login"} className="link">
           <span>Tu as déjà un compte, Connecte-toi!</span>
         </Link>
