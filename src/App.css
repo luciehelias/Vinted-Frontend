@@ -65,10 +65,15 @@ button {
 .findArticle {
   width: 250px;
   padding: 5px 5px 5px 30px;
-  color: #bbbbbb;
   background-color: #f5f6f7;
   border-radius: 5px;
   border: 1px solid #f5f6f7;
+  padding: 15px 40px;
+}
+
+.findArticle::placeholder {
+  color: #bbbbbb;
+  font-size: 16px;
 }
 
 .search-icon {

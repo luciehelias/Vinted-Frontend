@@ -32,7 +32,7 @@ const Header = ({ setSearchedOffers }) => {
             type="text"
             name="findArticle"
             id="findArticle"
-            placeholder="rechercher"
+            placeholder="Recherche des articles"
             className="findArticle"
             onChange={(e) => setSearchedOffers(e.target.value)}
           />
