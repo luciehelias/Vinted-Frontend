@@ -6,10 +6,12 @@ import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const Header = ({ setSearchedOffers }) => {
+const Header = ({ setSearchedOffers, priceAsc, setpriceAsc }) => {
   const [isLoggedIn, setIsLogIn] = useState(false);
   const token = Cookies.get("token");
   const navigate = useNavigate();
+
+  const handlePrice = () => setpriceAsc(!priceAsc);
 
   const handleLogout = () => {
     Cookies.remove("token");
@@ -26,16 +28,21 @@ const Header = ({ setSearchedOffers }) => {
         <Link to={"/"} className="link">
           <img src={logo} alt="logo vinted" className="logo" />
         </Link>
-        <div className="input-container">
-          <FaSearch className="search-icon" />
-          <input
-            type="text"
-            name="findArticle"
-            id="findArticle"
-            placeholder="Recherche des articles"
-            className="findArticle"
-            onChange={(e) => setSearchedOffers(e.target.value)}
-          />
+        <div className="filter-container">
+          <div className="input-container">
+            <FaSearch className="search-icon" />
+            <input
+              type="text"
+              name="findArticle"
+              placeholder="Recherche des articles"
+              className="findArticle"
+              onChange={(e) => setSearchedOffers(e.target.value)}
+            />
+          </div>
+          <div className="price-sort">
+            <p>Trier par prix croissant</p>
+            <input type="checkbox" checked={priceAsc} onChange={handlePrice} />
+          </div>
         </div>
         <div>
           {!isLoggedIn ? (

@@ -5,7 +5,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const Home = ({ searchedOffers }) => {
+const Home = ({ searchedOffers, priceAsc }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -38,6 +38,23 @@ const Home = ({ searchedOffers }) => {
     };
     fetchData();
   }, [searchedOffers]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const url = priceAsc
+          ? "https://lereacteur-vinted-api.herokuapp.com/v2/offers?sort=price-asc"
+          : " https://lereacteur-vinted-api.herokuapp.com/v2/offers?sort=price-desc";
+
+        const response = await axios.get(url);
+        setData(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.response);
+      }
+    };
+    fetchData();
+  }, [priceAsc]);
 
   return isLoading ? (
     <span>En cours de chargement...</span>

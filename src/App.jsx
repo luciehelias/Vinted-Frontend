@@ -9,12 +9,20 @@ import { useState } from "react";
 
 const App = () => {
   const [searchedOffers, setSearchedOffers] = useState("");
+  const [priceAsc, setpriceAsc] = useState(false);
 
   return (
     <Router>
-      <Header setSearchedOffers={setSearchedOffers} />
+      <Header
+        setSearchedOffers={setSearchedOffers}
+        setpriceAsc={setpriceAsc}
+        priceAsc={priceAsc}
+      />
       <Routes>
-        <Route path="/" element={<Home searchedOffers={searchedOffers} />} />
+        <Route
+          path="/"
+          element={<Home searchedOffers={searchedOffers} priceAsc={priceAsc} />}
+        />
         <Route path="/offers/:id" element={<Offer />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
