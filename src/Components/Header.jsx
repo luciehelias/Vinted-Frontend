@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const Header = () => {
+const Header = ({ setSearchedOffers }) => {
   const [isLoggedIn, setIsLogIn] = useState(false);
   const token = Cookies.get("token");
   const navigate = useNavigate();
@@ -34,6 +34,7 @@ const Header = () => {
             id="findArticle"
             placeholder="rechercher"
             className="findArticle"
+            onChange={(e) => setSearchedOffers(e.target.value)}
           />
         </div>
         <div>

@@ -5,13 +5,16 @@ import Offer from "./Pages/Offer";
 import Header from "./Components/Header";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
+import { useState } from "react";
 
 const App = () => {
+  const [searchedOffers, setSearchedOffers] = useState("");
+
   return (
     <Router>
-      <Header />
+      <Header setSearchedOffers={setSearchedOffers} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home searchedOffers={searchedOffers} />} />
         <Route path="/offers/:id" element={<Offer />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />

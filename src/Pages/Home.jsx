@@ -5,7 +5,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ searchedOffers }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -24,13 +24,27 @@ const Home = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://lereacteur-vinted-api.herokuapp.com/v2/offers?title=${searchedOffers}`
+        );
+        setData(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.response);
+      }
+    };
+    fetchData();
+  }, [searchedOffers]);
+
   return isLoading ? (
     <span>En cours de chargement...</span>
   ) : (
     <>
       <div className="top-home">
         <img src={bannière} alt="bannière" className="bannière" />
-
         <div className="start-sale">
           <h1>Prêts à faire du tri dans vos placards ?</h1>
           <button>Commencer à vendre </button>
@@ -39,11 +53,11 @@ const Home = () => {
       <div className="home-offers">
         <div className="offer-product">
           {data.offers.map((offer) => (
-            <Link to={"/offers/" + offer._id} key={offer._id} className="link">
+            <Link to={"/offers/" + offer._id} className="link" key={offer._id}>
               <div className="product">
                 <div className="owner-info">
                   <img
-                    src={offer.owner.account.avatar.url}
+                    src={offer.owner.account.avatar?.url}
                     alt="image"
                     className="owner"
                   />
@@ -55,14 +69,12 @@ const Home = () => {
                   className="product-image"
                 />
                 <span>{offer.product_price}€</span>
-                {offer.product_details.map((product) => {
-                  return (
-                    <>
-                      <h2>{product.TAILLE}</h2>
-                      <h2>{product.MARQUE}</h2>
-                    </>
-                  );
-                })}
+                {offer.product_details.map((product, i) => (
+                  <div key={i}>
+                    <h2>{product.TAILLE}</h2>
+                    <h2>{product.MARQUE}</h2>
+                  </div>
+                ))}
               </div>
             </Link>
           ))}
