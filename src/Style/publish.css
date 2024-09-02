@@ -1,0 +1,93 @@
+.publish-main {
+  background-color: #ebedee;
+}
+
+.publish-container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.publish-container h1 {
+  font-size: 24px;
+  padding-top: 40px;
+}
+
+.publish-container form {
+  display: block;
+  margin-top: 20px;
+}
+
+.publish-file-select,
+.publish-text-input-section {
+  background-color: white;
+  margin: 20px 0;
+  padding: 24px;
+  box-shadow: 0 0 2px gray;
+}
+
+.publish-file-select-dashed {
+  border: 1px #ebedee dashed;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.publish-text-input {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  border-bottom: 1px solid #ebedee;
+}
+
+.publish-text-input input,
+.publish-text-input textarea {
+  width: 50%;
+  border: NONE;
+  border-bottom: 1px solid #ebedee;
+}
+
+.publish-text-input input::placeholder,
+.publish-text-input textarea::placeholder {
+  color: #ced0d2;
+  font-size: 16px;
+  height: 25px;
+}
+
+.publish-text-input textarea {
+  height: 120px;
+}
+
+.checkbox-section {
+  width: 50%;
+}
+
+.checkbox-input {
+  margin-top: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.checkbox-input input {
+  display: inline-block;
+  width: 20px;
+  margin-right: 20px;
+  transform: scale(2);
+}
+
+.publish-form-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 50px;
+}
+
+.publish-form-validation {
+  background-color: #2bb1ba;
+  color: white;
+  padding: 15px;
+  margin-left: 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
