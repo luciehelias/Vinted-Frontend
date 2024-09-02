@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 import "../Style/login-signup.css";
 
@@ -8,6 +8,7 @@ const Login = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const location = useLocation();
 
   const navigate = useNavigate();
 
@@ -26,7 +27,8 @@ const Login = ({ handleToken }) => {
         }
       );
       handleToken(response.data.token);
-      navigate("/");
+      const redirectTo = location.state?.from || "/";
+      navigate(redirectTo, { replace: true });
     } catch (error) {
       if (error.response.data.message === "User not found") {
         setErrorMessage(
