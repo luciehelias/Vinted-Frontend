@@ -1,8 +1,6 @@
 import axios from "axios";
-import Cookies from "js-cookie";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = ({ handleToken }) => {
   const [username, setUsername] = useState("");
@@ -49,7 +47,7 @@ const Signup = ({ handleToken }) => {
     <div className="container-SL">
       <div className="container-signup">
         <h2>S'inscrire</h2>
-        <form action="" method="post">
+        <form action="" method="post" onSubmit={handleSignUp}>
           <input
             type="text"
             placeholder="Nom d'utilisateur"
@@ -85,11 +83,7 @@ const Signup = ({ handleToken }) => {
             Conditions et Politique de Confidentialité de Vinted. Je confirme
             avoir au moins 18 ans.
           </p>
-          <button
-            type="submit"
-            onClick={handleSignUp}
-            className="connect-button"
-          >
+          <button type="submit" className="connect-button">
             S'inscrire
           </button>
         </form>

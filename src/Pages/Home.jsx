@@ -1,5 +1,5 @@
 import bannière from "../assets/bannière.jpg";
-import tornPart from "../assets/torn-part.svg";
+// import tornPart from "../assets/torn-part.svg";
 
 import axios from "axios";
 import { useState, useEffect } from "react";

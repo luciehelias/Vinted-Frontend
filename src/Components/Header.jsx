@@ -1,9 +1,8 @@
 import logo from "../assets/logo.png";
 import { FaSearch } from "react-icons/fa";
 
-import { Link } from "react-router-dom";
-
-import { useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Header = ({
   setSearchedOffers,
@@ -12,7 +11,10 @@ const Header = ({
   token,
   handleToken,
 }) => {
-  const navigate = useNavigate();
+  let location = useLocation();
+  const [isHome, setIsHome] = useState(false);
+
+  useEffect(() => setIsHome(location.pathname === "/"), [location]);
 
   const handlePrice = () => setpriceAsc(!priceAsc);
 
@@ -22,22 +24,29 @@ const Header = ({
         <Link to={"/"} className="link">
           <img src={logo} alt="logo vinted" className="logo" />
         </Link>
-        <div className="filter-container">
-          <div className="input-container">
-            <FaSearch className="search-icon" />
-            <input
-              type="text"
-              name="findArticle"
-              placeholder="Recherche des articles"
-              className="findArticle"
-              onChange={(e) => setSearchedOffers(e.target.value)}
-            />
+        {isHome && (
+          <div className="filter-container">
+            <div className="input-container">
+              <FaSearch className="search-icon" />
+              <input
+                type="text"
+                name="findArticle"
+                placeholder="Recherche des articles"
+                className="findArticle"
+                onChange={(e) => setSearchedOffers(e.target.value)}
+              />
+            </div>
+            <div className="price-sort">
+              <p>Trier par prix croissant</p>
+              <input
+                type="checkbox"
+                checked={priceAsc}
+                onChange={handlePrice}
+              />
+            </div>
           </div>
-          <div className="price-sort">
-            <p>Trier par prix croissant</p>
-            <input type="checkbox" checked={priceAsc} onChange={handlePrice} />
-          </div>
-        </div>
+        )}
+
         <div>
           {!token ? (
             <>
@@ -52,7 +61,6 @@ const Header = ({
             <button
               onClick={() => {
                 handleToken(null);
-                // navigate("/");
               }}
               className="user-disconnect"
             >

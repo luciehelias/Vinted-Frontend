@@ -46,7 +46,7 @@ const Login = ({ handleToken }) => {
     <div className="container-SL">
       <div className="container-login">
         <h2>Se connecter</h2>
-        <form action="" method="post">
+        <form action="" method="post" onSubmit={handleLogin}>
           <input
             type="email"
             placeholder="Adresse email"
@@ -61,11 +61,7 @@ const Login = ({ handleToken }) => {
             onChange={handlePasswordChange}
             className="password"
           />
-          <button
-            type="submit"
-            onClick={handleLogin}
-            className="connect-button"
-          >
+          <button type="submit" className="connect-button">
             Se connecter
           </button>
         </form>
