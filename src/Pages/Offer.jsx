@@ -37,7 +37,7 @@ const Offer = () => {
               {data.product_details.map((elem) =>
                 Object.keys(elem).map((key) => (
                   <p key={key}>
-                    <span className="key-info">{key}: </span>
+                    <span className="key-info">{key} </span>
                     <span className="elem-key">{elem[key]}</span>
                   </p>
                 ))
@@ -47,7 +47,7 @@ const Offer = () => {
               <h1>{data.product_name}</h1>
               <p>{data.product_description}</p>
               <div className="offer-owner">
-                <img src={data.owner.account.avatar.url} alt="avatar" />
+                <img src={data.owner.account.avatar?.url} alt="avatar" />
                 <h2>{data.owner.account.username}</h2>
               </div>
             </div>
@@ -55,15 +55,6 @@ const Offer = () => {
           </div>
         </div>
       </div>
-      {/* <div>
-          {data.offers.map((offer) => {
-            return (
-              <>
-                <h3>{offer.product_price}</h3>
-              </>
-            );
-          })}
-        </div> */}
     </>
   );
 };

@@ -2,25 +2,19 @@ import logo from "../assets/logo.png";
 import { FaSearch } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
-import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
 
-const Header = ({ setSearchedOffers, priceAsc, setpriceAsc }) => {
-  const [isLoggedIn, setIsLogIn] = useState(false);
-  const token = Cookies.get("token");
+import { useNavigate } from "react-router-dom";
+
+const Header = ({
+  setSearchedOffers,
+  priceAsc,
+  setpriceAsc,
+  token,
+  handleToken,
+}) => {
   const navigate = useNavigate();
 
   const handlePrice = () => setpriceAsc(!priceAsc);
-
-  const handleLogout = () => {
-    Cookies.remove("token");
-    navigate("/");
-  };
-
-  useEffect(() => {
-    setIsLogIn(token ? true : false);
-  }, [token]);
 
   return (
     <>
@@ -45,7 +39,7 @@ const Header = ({ setSearchedOffers, priceAsc, setpriceAsc }) => {
           </div>
         </div>
         <div>
-          {!isLoggedIn ? (
+          {!token ? (
             <>
               <Link to={"/signup"} className="link">
                 <button className="user-connect">S'inscrire</button>
@@ -55,7 +49,13 @@ const Header = ({ setSearchedOffers, priceAsc, setpriceAsc }) => {
               </Link>
             </>
           ) : (
-            <button onClick={handleLogout} className="user-disconnect">
+            <button
+              onClick={() => {
+                handleToken(null);
+                // navigate("/");
+              }}
+              className="user-disconnect"
+            >
               Se déconnecter
             </button>
           )}

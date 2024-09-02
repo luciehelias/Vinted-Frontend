@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const Signup = ({ handleToken }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -31,7 +31,7 @@ const Signup = () => {
         }
       );
 
-      Cookies.set("token", response.data.token, { expires: 7 });
+      handleToken(response.data.token);
       navigate("/");
     } catch (error) {
       console.log(error);
