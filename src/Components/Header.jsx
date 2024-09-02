@@ -1,3 +1,5 @@
+import "../Style/header.css";
+
 import logo from "../assets/logo.png";
 import { FaSearch } from "react-icons/fa";
 
@@ -20,19 +22,17 @@ const Header = ({
 
   return (
     <>
-      <div className="header">
+      <header className="header">
         <Link to={"/"} className="link">
           <img src={logo} alt="logo vinted" className="logo" />
         </Link>
         {isHome && (
-          <div className="filter-container">
-            <div className="input-container">
+          <section>
+            <div className="search-bar">
               <FaSearch className="search-icon" />
               <input
                 type="text"
-                name="findArticle"
                 placeholder="Recherche des articles"
-                className="findArticle"
                 onChange={(e) => setSearchedOffers(e.target.value)}
               />
             </div>
@@ -44,18 +44,18 @@ const Header = ({
                 onChange={handlePrice}
               />
             </div>
-          </div>
+          </section>
         )}
 
         <div>
           {!token ? (
             <>
-              <button className="user-connect">
+              <button className="button-connect">
                 <Link to={"/signup"} className="link">
                   S'inscrire
                 </Link>
               </button>
-              <button className="user-connect">
+              <button className="button-connect">
                 <Link to={"/login"} className="link">
                   Se connecter
                 </Link>
@@ -66,12 +66,12 @@ const Header = ({
               onClick={() => {
                 handleToken(null);
               }}
-              className="user-disconnect"
+              className="button-disconnect"
             >
               Se déconnecter
             </button>
           )}
-          <button className="user-sale">
+          <button className="button-sell">
             {token ? (
               <Link to={"/publish"} className="link">
                 Vends tes articles
@@ -83,7 +83,7 @@ const Header = ({
             )}
           </button>
         </div>
-      </div>
+      </header>
     </>
   );
 };

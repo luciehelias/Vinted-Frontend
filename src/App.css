@@ -7,93 +7,17 @@ body {
   font-family: "Maison neue book";
 }
 
+button {
+  border-radius: 5px;
+  border: 1px solid #2bb1ba;
+}
+
 .link {
   text-decoration: none;
   color: inherit;
 }
 
 /* Header */
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 120px;
-  padding: 0 50px;
-}
-
-.logo {
-  height: 50px;
-  position: relative;
-}
-
-button {
-  border-radius: 5px;
-  border: 1px solid #2bb1ba;
-}
-
-.user-connect {
-  background-color: white;
-  color: #2bb1ba;
-  padding: 10px 20px;
-  margin-right: 20px;
-  cursor: pointer;
-}
-
-.user-disconnect {
-  background-color: #c42161;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  margin-right: 20px;
-  cursor: pointer;
-}
-
-.user-sale {
-  background-color: #2bb1ba;
-  color: white;
-  padding: 10px;
-  margin-left: 40px;
-  cursor: pointer;
-}
-
-.input-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.findArticle {
-  width: 250px;
-  padding: 5px 5px 5px 30px;
-  background-color: #f5f6f7;
-  border-radius: 5px;
-  border: 1px solid #f5f6f7;
-  padding: 15px 40px;
-}
-
-.findArticle::placeholder {
-  color: #bbbbbb;
-  font-size: 16px;
-}
-
-.search-icon {
-  position: absolute;
-  left: 10px;
-  color: #bbbbbb;
-}
-
-.filter-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.price-sort {
-  margin-top: 20px;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
 
 /* Home */
 
