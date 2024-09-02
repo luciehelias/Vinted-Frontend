@@ -50,12 +50,16 @@ const Header = ({
         <div>
           {!token ? (
             <>
-              <Link to={"/signup"} className="link">
-                <button className="user-connect">S'inscrire</button>
-              </Link>
-              <Link to={"/login"} className="link">
-                <button className="user-connect">Se connecter</button>
-              </Link>
+              <button className="user-connect">
+                <Link to={"/signup"} className="link">
+                  S'inscrire
+                </Link>
+              </button>
+              <button className="user-connect">
+                <Link to={"/login"} className="link">
+                  Se connecter
+                </Link>
+              </button>
             </>
           ) : (
             <button
@@ -67,7 +71,12 @@ const Header = ({
               Se déconnecter
             </button>
           )}
-          <button className="user-sale">Vends tes articles</button>
+
+          <button className="user-sale">
+            <Link to={"/publish"} className="link">
+              Vends tes articles{" "}
+            </Link>
+          </button>
         </div>
       </div>
     </>
