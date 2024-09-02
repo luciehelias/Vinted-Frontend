@@ -55,7 +55,7 @@ const Publish = ({ token }) => {
   };
 
   return (
-    <div className="publish-main">
+    <section className="publish">
       <div className="publish-container">
         <h1>Vends ton article</h1>
         <form action="" method="post" onSubmit={handleSubmit}>
@@ -193,7 +193,7 @@ const Publish = ({ token }) => {
           </div>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

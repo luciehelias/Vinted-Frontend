@@ -1,20 +1,21 @@
-.publish-main {
+.publish {
   background-color: #ebedee;
+  padding: 20px;
+}
+
+.publish h1 {
+  font-size: 24px;
+  padding-top: 40px;
+}
+
+.publish form {
+  display: block;
+  margin-top: 20px;
 }
 
 .publish-container {
   width: 1280px;
   margin: 0 auto;
-}
-
-.publish-container h1 {
-  font-size: 24px;
-  padding-top: 40px;
-}
-
-.publish-container form {
-  display: block;
-  margin-top: 20px;
 }
 
 .publish-file-select,
@@ -46,6 +47,7 @@
   width: 50%;
   border: NONE;
   border-bottom: 1px solid #ebedee;
+  padding: 8px;
 }
 
 .publish-text-input input::placeholder,
