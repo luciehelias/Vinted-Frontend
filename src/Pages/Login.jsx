@@ -1,8 +1,8 @@
+import "../Style/connect.css";
+
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-
-import "../Style/login-signup.css";
 
 const Login = ({ handleToken }) => {
   const [email, setEmail] = useState("");
@@ -45,25 +45,27 @@ const Login = ({ handleToken }) => {
   };
 
   return (
-    <div className="container-SL">
-      <div className="container-login">
-        <h2>Se connecter</h2>
+    <section className="connect">
+      <div className="connect-container">
+        <h1>Se connecter</h1>
         <form action="" method="post" onSubmit={handleLogin}>
-          <input
-            type="email"
-            placeholder="Adresse email"
-            value={email}
-            onChange={handleEmailChange}
-            className="email"
-          />
-          <input
-            type="password"
-            placeholder="Mot de passe"
-            value={password}
-            onChange={handlePasswordChange}
-            className="password"
-          />
-          <button type="submit" className="connect-button">
+          <label className="connect-label">
+            <input
+              type="email"
+              placeholder="Adresse email"
+              value={email}
+              onChange={handleEmailChange}
+            />
+          </label>
+          <label className="connect-label">
+            <input
+              type="password"
+              placeholder="Mot de passe"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </label>
+          <button type="submit" className="button-connect--secondary">
             Se connecter
           </button>
         </form>
@@ -72,7 +74,7 @@ const Login = ({ handleToken }) => {
           <span>Pas encore de compte, inscris-toi !</span>
         </Link>
       </div>
-    </div>
+    </section>
   );
 };
 

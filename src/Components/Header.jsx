@@ -50,12 +50,12 @@ const Header = ({
         <div>
           {!token ? (
             <>
-              <button className="button-connect">
+              <button className="button-connect--primary">
                 <Link to={"/signup"} className="link">
                   S'inscrire
                 </Link>
               </button>
-              <button className="button-connect">
+              <button className="button-connect--primary">
                 <Link to={"/login"} className="link">
                   Se connecter
                 </Link>

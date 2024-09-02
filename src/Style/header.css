@@ -11,7 +11,7 @@ header {
   position: relative;
 }
 
-.button-connect {
+.button-connect--primary {
   background-color: white;
   color: #2bb1ba;
   padding: 10px 20px;

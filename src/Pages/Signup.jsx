@@ -1,3 +1,5 @@
+import "../Style/connect.css";
+
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -44,37 +46,40 @@ const Signup = ({ handleToken }) => {
   };
 
   return (
-    <div className="container-SL">
-      <div className="container-signup">
-        <h2>S'inscrire</h2>
+    <section className="connect">
+      <div className="connect-container">
+        <h1>S'inscrire</h1>
         <form action="" method="post" onSubmit={handleSignUp}>
-          <input
-            type="text"
-            placeholder="Nom d'utilisateur"
-            value={username}
-            onChange={handleUsernameChange}
-            className="username"
-          />
-          <input
-            type="email"
-            placeholder="Adresse email"
-            value={email}
-            onChange={handleEmailChange}
-            className="email"
-          />
-          <input
-            type="password"
-            placeholder="Mot de passe"
-            value={password}
-            onChange={handlePasswordChange}
-            className="password"
-          />
-          <label>
+          <label className="connect-label">
+            <input
+              type="text"
+              placeholder="Nom d'utilisateur"
+              value={username}
+              onChange={handleUsernameChange}
+            />
+          </label>
+          <label className="connect-label">
+            <input
+              type="email"
+              placeholder="Adresse email"
+              value={email}
+              onChange={handleEmailChange}
+            />
+          </label>
+          <label className="connect-label">
+            <input
+              type="password"
+              placeholder="Mot de passe"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </label>
+          <label className="checkbox-label">
             <input
               type="checkBox"
               checked={newsLetter}
               onChange={handleNewsLetter}
-              className="checkbox"
+              id="checkbox-newsletter"
             />
             S'inscrire à notre newsletter
           </label>
@@ -83,7 +88,7 @@ const Signup = ({ handleToken }) => {
             Conditions et Politique de Confidentialité de Vinted. Je confirme
             avoir au moins 18 ans.
           </p>
-          <button type="submit" className="connect-button">
+          <button type="submit" className="button-connect--secondary">
             S'inscrire
           </button>
         </form>
@@ -92,7 +97,7 @@ const Signup = ({ handleToken }) => {
           <span>Tu as déjà un compte, Connecte-toi!</span>
         </Link>
       </div>
-    </div>
+    </section>
   );
 };
 

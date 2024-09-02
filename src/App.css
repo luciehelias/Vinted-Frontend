@@ -12,12 +12,16 @@ button {
   border: 1px solid #2bb1ba;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .link {
   text-decoration: none;
   color: inherit;
 }
-
-/* Header */
 
 /* Home */
 

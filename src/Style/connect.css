@@ -1,24 +1,14 @@
-.container-login,
-.container-signup {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
-  width: 240px;
-}
-
-.container-SL {
+.connect {
   display: flex;
   justify-content: center;
 }
 
-.container-SL h2 {
+.connect h1 {
   font-size: 24px;
   margin-bottom: 30px;
 }
 
-.container-SL p {
+.connect p {
   font-size: 12px;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -26,36 +16,45 @@
   line-height: 1.25;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
+.connect span {
+  color: #2bb1ba;
+  font-size: 14px;
 }
 
-label {
+.connect-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  width: 280px;
+}
+
+.connect-label {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #fcced3;
+  padding: 10px 0;
+  opacity: 50%;
+}
+
+.connect-label input {
+  border: none;
+  font-size: 16px;
+}
+
+.checkbox-label {
   color: #8f8f8f;
   display: flex;
   align-items: center;
   margin-top: 20px;
 }
 
-label input {
+#checkbox-newsletter {
   margin-right: 20px;
   transform: scale(2);
 }
 
-.email,
-.password,
-.username {
-  margin-bottom: 20px;
-  border: none;
-  border-bottom: 1px solid #fcced3;
-  width: 250px;
-  height: 35px;
-  font-size: 16px;
-  opacity: 50%;
-}
-
-.connect-button {
+.button-connect--secondary {
   border-radius: 5px;
   border: 1px solid #2bb1ba;
   background-color: #2bb1ba;
@@ -63,9 +62,4 @@ label input {
   padding: 10px 20px;
   margin: 20px 0;
   font-size: 16px;
-}
-
-.container-SL span {
-  color: #2bb1ba;
-  font-size: 14px;
 }

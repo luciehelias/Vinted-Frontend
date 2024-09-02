@@ -26,7 +26,7 @@ const Offer = () => {
     <span>En cours de chargement...</span>
   ) : (
     <>
-      <div className="container-offer">
+      <section className="container-offer">
         <div className="box-offer">
           <div className="offer-product-image">
             <img src={data.product_image.url} alt="image" />
@@ -54,7 +54,7 @@ const Offer = () => {
             <button className="buy-button">Acheter</button>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };
