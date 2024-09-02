@@ -64,7 +64,9 @@ const Home = ({ searchedOffers, priceAsc }) => {
         <img src={bannière} alt="bannière" className="bannière" />
         <div className="start-sale">
           <h1>Prêts à faire du tri dans vos placards ?</h1>
-          <button>Commencer à vendre </button>
+          <Link to={"/publish"} className="link">
+            <button>Commencer à vendre </button>
+          </Link>
         </div>
       </div>
       <div className="home-offers">

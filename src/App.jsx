@@ -7,6 +7,7 @@ import Home from "./Pages/Home";
 import Offer from "./Pages/Offer";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
+import Publish from "./Pages/Publish";
 
 import Header from "./Components/Header";
 
@@ -43,6 +44,7 @@ const App = () => {
         <Route path="/offers/:id" element={<Offer />} />
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />
+        <Route path="/publish" element={<Publish />} />
       </Routes>
     </Router>
   );
