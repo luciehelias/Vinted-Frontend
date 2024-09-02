@@ -14,7 +14,7 @@ const Signup = ({ handleToken }) => {
 
   const handleUsernameChange = (e) => setUsername(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
-  const handlePasswordChange = (e) => setPassword(e.target.valueue);
+  const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleNewsLetter = () => setNewsLetter(!newsLetter);
 
   const handleSignUp = async (e) => {
@@ -22,7 +22,7 @@ const Signup = ({ handleToken }) => {
     setErrorMessage("");
     try {
       const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        "https://site--backend-vinted--4fybfkwcyn9l.code.run/user/signup",
         {
           email: email,
           username: username,

@@ -13,7 +13,7 @@ const Home = ({ searchedOffers, priceAsc }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://lereacteur-vinted-api.herokuapp.com/v2/offers"
+          "https://site--backend-vinted--4fybfkwcyn9l.code.run/offers"
         );
         setData(response.data);
         setIsLoading(false);
