@@ -71,12 +71,19 @@ const Header = ({
               Se déconnecter
             </button>
           )}
-
-          <button className="user-sale">
-            <Link to={"/publish"} className="link">
-              Vends tes articles{" "}
-            </Link>
-          </button>
+          {token ? (
+            <button className="user-sale">
+              <Link to={"/publish"} className="link">
+                Vends tes articles{" "}
+              </Link>
+            </button>
+          ) : (
+            <button className="user-sale">
+              <Link to={"/login"} className="link">
+                Vends tes articles{" "}
+              </Link>
+            </button>
+          )}
         </div>
       </div>
     </>
