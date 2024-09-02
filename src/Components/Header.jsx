@@ -11,7 +11,7 @@ const Header = ({
   token,
   handleToken,
 }) => {
-  let location = useLocation();
+  const location = useLocation();
   const [isHome, setIsHome] = useState(false);
 
   useEffect(() => setIsHome(location.pathname === "/"), [location]);
@@ -71,19 +71,17 @@ const Header = ({
               Se déconnecter
             </button>
           )}
-          {token ? (
-            <button className="user-sale">
+          <button className="user-sale">
+            {token ? (
               <Link to={"/publish"} className="link">
-                Vends tes articles{" "}
+                Vends tes articles
               </Link>
-            </button>
-          ) : (
-            <button className="user-sale">
-              <Link to={"/login"} className="link">
-                Vends tes articles{" "}
+            ) : (
+              <Link to={"/login"} state={{ from: "/publish" }} className="link">
+                Vends tes articles
               </Link>
-            </button>
-          )}
+            )}
+          </button>
         </div>
       </div>
     </>
