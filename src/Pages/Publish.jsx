@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Publish = ({ token }) => {
-  const [file, setFile] = useState({});
+  const [file, setFile] = useState("null");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("0");
@@ -61,13 +61,6 @@ const Publish = ({ token }) => {
         <form method="post" onSubmit={handleSubmit}>
           <div className="publish-file-select">
             <div className="publish-file-select-dashed">
-              {file && (
-                <img
-                  src={URL.createObjectURL(file)}
-                  alt="preview photo"
-                  className="publish-image-preview"
-                />
-              )}
               <label
                 htmlFor="publish-file-picture"
                 className="publish-file-label"
@@ -82,6 +75,13 @@ const Publish = ({ token }) => {
                   }}
                 />
               </label>
+              {file && (
+                <img
+                  src={URL.createObjectURL(file)}
+                  alt="preview photo"
+                  className="publish-image-preview"
+                />
+              )}
             </div>
           </div>
           <div className="publish-text-input-section">
