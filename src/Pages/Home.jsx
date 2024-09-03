@@ -62,7 +62,7 @@ const Home = ({ searchedOffers, priceAsc }) => {
   ) : (
     <>
       <Banner />
-      <div className="home-offers">
+      <div>
         <div className="offer-product">
           {data.offers.map((offer) => (
             <Link to={"/offers/" + offer._id} className="link" key={offer._id}>
