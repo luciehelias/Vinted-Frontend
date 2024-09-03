@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import banner from "../assets/bannière.jpg";
+import banner from "../assets/banner.jpg";
 
 import "../Styles/banner.css";
 
