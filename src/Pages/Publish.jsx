@@ -34,7 +34,7 @@ const Publish = ({ token }) => {
       formData.append("picture", file);
 
       const response = await axios.post(
-        "https://site--backend-vinted--4fybfkwcyn9l.code.run/offer/publish",
+        "https://site--backend-vinted--4fybfkwcyn9l.code.run/offers/publish",
         formData,
         {
           headers: {

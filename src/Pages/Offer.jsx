@@ -29,7 +29,7 @@ const Offer = () => {
       <section className="container-offer">
         <div className="box-offer">
           <div className="offer-product-image">
-            <img src={data.product_image.url} alt="image" />
+            <img src={data.product_image.secure_url} alt="image" />
           </div>
           <div className="product-infos">
             <span className="price">{data.product_price} €</span>

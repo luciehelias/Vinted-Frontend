@@ -28,7 +28,7 @@ const Home = ({ searchedOffers, priceAsc }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/v2/offers?title=${searchedOffers}`
+          `https://site--backend-vinted--4fybfkwcyn9l.code.run/offers?title=${searchedOffers}`
         );
         setData(response.data);
         setIsLoading(false);
@@ -43,8 +43,8 @@ const Home = ({ searchedOffers, priceAsc }) => {
     const fetchData = async () => {
       try {
         const url = priceAsc
-          ? "https://lereacteur-vinted-api.herokuapp.com/v2/offers?sort=price-asc"
-          : " https://lereacteur-vinted-api.herokuapp.com/v2/offers?sort=price-desc";
+          ? "https://site--backend-vinted--4fybfkwcyn9l.code.run/offers?sort=price-asc"
+          : " https://site--backend-vinted--4fybfkwcyn9l.code.run/offers?sort=price-desc";
 
         const response = await axios.get(url);
         setData(response.data);
@@ -83,7 +83,7 @@ const Home = ({ searchedOffers, priceAsc }) => {
                   <h2>{offer.owner.account.username}</h2>
                 </div>
                 <img
-                  src={offer.product_image.url}
+                  src={offer.product_image.secure_url}
                   alt="image"
                   className="product-image"
                 />
