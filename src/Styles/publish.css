@@ -93,3 +93,24 @@
   font-size: 16px;
   cursor: pointer;
 }
+
+.publish-file-picture {
+  display: none;
+}
+
+.publish-file-label {
+  color: #2bb1ba;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  border: 1px solid #2bb1ba;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.publish-file-label span {
+  font-size: 40px;
+  margin-right: 20px;
+}

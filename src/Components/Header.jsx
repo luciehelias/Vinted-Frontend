@@ -1,4 +1,4 @@
-import "../Style/header.css";
+import "../Styles/header.css";
 
 import logo from "../assets/logo.png";
 import { FaSearch } from "react-icons/fa";

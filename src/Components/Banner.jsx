@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 
+// import tornPart from "../assets/torn-part.svg";
 import banner from "../assets/bannière.jpg";
 
-import "../Style/banner.css";
+import "../Styles/banner.css";
 
 const Banner = () => {
   return (
-    <div className="banner">
+    <section className="banner">
       <img src={banner} alt="bannière" />
       <div className="banner-container">
         <h1>Prêts à faire du tri dans vos placards ?</h1>
@@ -14,7 +15,7 @@ const Banner = () => {
           <button>Commencer à vendre </button>
         </Link>
       </div>
-    </div>
+    </section>
   );
 };
 

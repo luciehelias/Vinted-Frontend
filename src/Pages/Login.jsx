@@ -1,4 +1,4 @@
-import "../Style/connect.css";
+import "../Styles/connect.css";
 
 import axios from "axios";
 import { useState } from "react";

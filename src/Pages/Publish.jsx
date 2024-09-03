@@ -1,4 +1,4 @@
-import "../Style/publish.css";
+import "../Styles/publish.css";
 
 import axios from "axios";
 import { useState } from "react";
@@ -8,7 +8,7 @@ const Publish = ({ token }) => {
   const [file, setFile] = useState({});
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
+  const [price, setPrice] = useState("0");
   const [condition, setCondition] = useState("");
   const [city, setCity] = useState("");
   const [brand, setBrand] = useState("");
@@ -58,15 +58,23 @@ const Publish = ({ token }) => {
     <section className="publish">
       <div className="publish-container">
         <h1>Vends ton article</h1>
-        <form action="" method="post" onSubmit={handleSubmit}>
+        <form method="post" onSubmit={handleSubmit}>
           <div className="publish-file-select">
             <div className="publish-file-select-dashed">
-              <input
-                type="file"
-                onChange={(e) => {
-                  setFile(e.target.files[0]);
-                }}
-              />
+              <label
+                htmlFor="publish-file-picture"
+                className="publish-file-label"
+              >
+                <span>+</span> Ajoute ta photo
+                <input
+                  type="file"
+                  id="publish-file-picture"
+                  className="publish-file-picture"
+                  onChange={(e) => {
+                    setFile(e.target.files[0]);
+                  }}
+                />
+              </label>
             </div>
           </div>
           <div className="publish-text-input-section">
