@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import Banner from "../Components/Banner";
 
+import avatar from "../assets/avatar.jpg";
+
 const Home = ({ searchedOffers, priceAsc }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -67,7 +69,11 @@ const Home = ({ searchedOffers, priceAsc }) => {
             <div className="product">
               <div className="owner-info">
                 <img
-                  src={offer.owner.account.avatar?.url}
+                  src={
+                    offer.owner.account.avatar?.url
+                      ? offer.owner.account.avatar.url
+                      : avatar
+                  }
                   alt="image"
                   className="owner"
                 />

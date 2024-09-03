@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
+import avatar from "../assets/avatar.jpg";
+
 const Offer = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -48,7 +50,14 @@ const Offer = () => {
               <h1>{data.product_name}</h1>
               <p>{data.product_description}</p>
               <div className="offer-owner">
-                <img src={data.owner.account.avatar?.url} alt="avatar" />
+                <img
+                  src={
+                    data.owner.account.avatar?.url
+                      ? data.owner.account.avatar.url
+                      : avatar
+                  }
+                  alt="avatar"
+                />
                 <h2>{data.owner.account.username}</h2>
               </div>
             </div>
