@@ -68,7 +68,9 @@ const Header = ({
               }}
               className="button-disconnect"
             >
-              Se déconnecter
+              <Link to={"/"} className="link">
+                Se déconnecter
+              </Link>
             </button>
           )}
           <button className="button-sell">
