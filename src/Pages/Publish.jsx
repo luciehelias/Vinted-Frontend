@@ -61,6 +61,13 @@ const Publish = ({ token }) => {
         <form method="post" onSubmit={handleSubmit}>
           <div className="publish-file-select">
             <div className="publish-file-select-dashed">
+              {file && (
+                <img
+                  src={URL.createObjectURL(file)}
+                  alt="preview photo"
+                  className="publish-image-preview"
+                />
+              )}
               <label
                 htmlFor="publish-file-picture"
                 className="publish-file-label"

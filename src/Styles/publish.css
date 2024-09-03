@@ -33,6 +33,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+  overflow: hidden;
 }
 
 .publish-text-input {
@@ -113,4 +114,10 @@
 .publish-file-label span {
   font-size: 40px;
   margin-right: 20px;
+}
+
+.publish-image-preview {
+  height: 250px;
+  width: 200px;
+  object-fit: contain;
 }
