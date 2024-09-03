@@ -116,9 +116,26 @@
   margin-right: 20px;
 }
 
-.publish-image-preview {
-  /* height: 250px; */
-  /* width: 200px; */
-  /* object-fit: contain; */
+.publish-image--preview {
+  width: 200px;
+  object-fit: contain;
+}
+
+.publish-file-present {
   margin-left: 40px;
+  display: flex;
+  text-align: center;
+  justify-content: flex-start;
+  height: 100%;
+  gap: 5px;
+}
+
+.delete-image {
+  background-color: #ebedee;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 10px;
+  color: black;
+  height: 20px;
+  cursor: pointer;
 }

@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Publish = ({ token }) => {
-  const [file, setFile] = useState("null");
+  const [file, setFile] = useState(null);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("0");
@@ -75,13 +75,23 @@ const Publish = ({ token }) => {
                   }}
                 />
               </label>
-              {/* {file && (
-                <img
-                  src={URL.createObjectURL(file)}
-                  alt="preview photo"
-                  className="publish-image-preview"
-                />
-              )} */}
+              {file && (
+                <div className="publish-file-present">
+                  <img
+                    src={URL.createObjectURL(file)}
+                    alt="preview photo"
+                    className="publish-image--preview"
+                  />
+                  <div
+                    className="delete-image"
+                    onClick={() => {
+                      setFile(null);
+                    }}
+                  >
+                    X
+                  </div>
+                </div>
+              )}
             </div>
           </div>
           <div className="publish-text-input-section">
