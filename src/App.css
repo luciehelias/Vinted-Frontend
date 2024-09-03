@@ -55,7 +55,7 @@ form {
 .product-image {
   height: 300px;
   width: 200px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .product h2 {
@@ -90,7 +90,7 @@ form {
 .offer-product-image img {
   height: 100%;
   width: 100%;
-  object-fit: contain;
+  object-fit: scale-down;
 }
 
 .product-infos {
