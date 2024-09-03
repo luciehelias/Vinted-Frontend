@@ -1,9 +1,10 @@
-import bannière from "../assets/bannière.jpg";
 // import tornPart from "../assets/torn-part.svg";
 
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
+import Banner from "../Components/Banner";
 
 const Home = ({ searchedOffers, priceAsc }) => {
   const [data, setData] = useState();
@@ -60,15 +61,7 @@ const Home = ({ searchedOffers, priceAsc }) => {
     <span>En cours de chargement...</span>
   ) : (
     <>
-      <div className="top-home">
-        <img src={bannière} alt="bannière" className="bannière" />
-        <div className="start-sale">
-          <h1>Prêts à faire du tri dans vos placards ?</h1>
-          <Link to={"/publish"} className="link">
-            <button>Commencer à vendre </button>
-          </Link>
-        </div>
-      </div>
+      <Banner />
       <div className="home-offers">
         <div className="offer-product">
           {data.offers.map((offer) => (

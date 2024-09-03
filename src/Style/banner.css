@@ -1,0 +1,41 @@
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.banner img {
+  height: 450px;
+  width: 100vw;
+  object-fit: cover;
+  position: relative;
+}
+
+.banner h1 {
+  font-size: 40px;
+}
+
+.banner button {
+  height: 45px;
+  width: 187px;
+  background-color: #2bb1ba;
+  border-radius: 4px;
+  font-size: 16px;
+  color: white;
+  margin-top: 32px;
+  padding: 0 14px;
+}
+
+.banner-container {
+  position: absolute;
+  margin: 50px;
+  background-color: #ffffff;
+  height: 220px;
+  width: 360px;
+  border-radius: 3px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 2px #1111113d;
+}
