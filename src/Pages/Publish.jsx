@@ -75,13 +75,13 @@ const Publish = ({ token }) => {
                   }}
                 />
               </label>
-              {file && (
+              {/* {file && (
                 <img
                   src={URL.createObjectURL(file)}
                   alt="preview photo"
                   className="publish-image-preview"
                 />
-              )}
+              )} */}
             </div>
           </div>
           <div className="publish-text-input-section">

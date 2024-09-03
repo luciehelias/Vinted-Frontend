@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Offer = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,7 +21,7 @@ const Offer = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [id]);
 
   return isLoading ? (
     <span>En cours de chargement...</span>
@@ -51,7 +52,19 @@ const Offer = () => {
                 <h2>{data.owner.account.username}</h2>
               </div>
             </div>
-            <button className="buy-button">Acheter</button>
+            <button
+              className="buy-button"
+              onClick={() => {
+                navigate("/payment", {
+                  state: {
+                    productName: data.product_name,
+                    price: data.product_price,
+                  },
+                });
+              }}
+            >
+              Acheter
+            </button>
           </div>
         </div>
       </section>

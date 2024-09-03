@@ -8,6 +8,7 @@ import Offer from "./Pages/Offer";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import Publish from "./Pages/Publish";
+import Payment from "./Pages/Payment";
 
 import Header from "./Components/Header";
 
@@ -45,6 +46,7 @@ const App = () => {
         <Route path="/signup" element={<Signup handleToken={handleToken} />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />
         <Route path="/publish" element={<Publish token={token} />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
     </Router>
   );

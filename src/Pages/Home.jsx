@@ -29,6 +29,7 @@ const Home = ({ searchedOffers, priceAsc }) => {
         const response = await axios.get(
           `https://site--backend-vinted--4fybfkwcyn9l.code.run/offers?title=${searchedOffers}`
         );
+
         setData(response.data);
         setIsLoading(false);
       } catch (error) {

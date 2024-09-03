@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-// import tornPart from "../assets/torn-part.svg";
 import banner from "../assets/bannière.jpg";
 
 import "../Styles/banner.css";
