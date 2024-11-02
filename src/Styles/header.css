@@ -34,6 +34,7 @@ header {
   padding: 10px;
   margin-left: 40px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .search-bar {
@@ -71,4 +72,105 @@ header {
 
 .price-sort p {
   color: #bbbbbb;
+}
+@media (max-width: 1024px) {
+  header {
+    padding: 0 30px;
+    height: 100px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .button-connect--primary,
+  .button-disconnect,
+  .button-sell {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .search-bar input {
+    width: 200px;
+    padding: 10px 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 20px;
+  }
+
+  .button-connect--primary,
+  .button-disconnect,
+  .button-sell {
+    padding: 8px 10px;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-left: 0;
+  }
+
+  .button-sell {
+    margin-top: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .buttons-header {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    align-items: start;
+    width: 100%;
+  }
+
+  .logo {
+    height: 20px;
+    margin-bottom: 10px;
+  }
+
+  .section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+  }
+
+  .search-bar input {
+    padding: 6px 30px;
+    font-size: 16px;
+  }
+
+  .buttons-header {
+    display: flex;
+    gap: 10px;
+  }
+
+  .button-connect--primary,
+  .button-disconnect,
+  .button-sell {
+    font-size: 12px;
+    padding: 10px 30px;
+  }
+
+  .search-icon {
+    left: 5px;
+  }
+
+  .price-sort p {
+    font-size: 10px;
+  }
+
+  .price-sort {
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 0px;
+  }
 }

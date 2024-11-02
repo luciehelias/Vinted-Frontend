@@ -27,7 +27,7 @@ const Header = ({
           <img src={logo} alt="logo vinted" className="logo" />
         </Link>
         {isHome && (
-          <section>
+          <section className="section">
             <div className="search-bar">
               <FaSearch className="search-icon" />
               <input
@@ -49,7 +49,7 @@ const Header = ({
 
         <div>
           {!token ? (
-            <>
+            <div className="buttons-header">
               <button className="button-connect--primary">
                 <Link to={"/signup"} className="link">
                   S'inscrire
@@ -60,7 +60,7 @@ const Header = ({
                   Se connecter
                 </Link>
               </button>
-            </>
+            </div>
           ) : (
             <button
               onClick={() => {
