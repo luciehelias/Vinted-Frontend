@@ -39,3 +39,22 @@
   justify-content: center;
   box-shadow: 0 0 2px #1111113d;
 }
+
+@media (max-width: 480px) {
+  .banner img {
+    width: 100%;
+  }
+  .banner-container {
+    position: absolute;
+    margin: 10px;
+    background-color: #ffffff;
+    height: 100px;
+    width: 360px;
+    border-radius: 3px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 2px #1111113d;
+  }
+}
