@@ -73,6 +73,7 @@ header {
 .price-sort p {
   color: #bbbbbb;
 }
+
 @media (max-width: 1024px) {
   header {
     padding: 0 30px;
@@ -128,7 +129,7 @@ header {
 @media (max-width: 480px) {
   header {
     align-items: start;
-    width: 100%;
+    width: auto;
   }
 
   .logo {
