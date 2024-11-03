@@ -12,6 +12,8 @@ import Payment from "./Pages/Payment";
 
 import Header from "./Components/Header";
 
+import "./Styles/typography.scss";
+
 const App = () => {
   const [searchedOffers, setSearchedOffers] = useState("");
   const [priceAsc, setpriceAsc] = useState(false);

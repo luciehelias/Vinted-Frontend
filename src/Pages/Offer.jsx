@@ -4,6 +4,9 @@ import { useParams, useNavigate } from "react-router-dom";
 
 import avatar from "../assets/avatar.jpg";
 
+import "../Styles/offer.scss";
+import "../Styles/colors.scss";
+
 const Offer = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -28,56 +31,54 @@ const Offer = () => {
   return isLoading ? (
     <span>En cours de chargement...</span>
   ) : (
-    <>
-      <section className="container-offer">
-        <div className="box-offer">
-          <div className="offer-product-image">
-            <img src={data.product_image.secure_url} alt="image" />
-          </div>
-          <div className="product-infos">
-            <span className="price">{data.product_price} €</span>
-            <section className="details-infos">
-              {data.product_details.map((elem) =>
-                Object.keys(elem).map((key) => (
-                  <p key={key}>
-                    <span className="key-info">{key} </span>
-                    <span className="elem-key">{elem[key]}</span>
-                  </p>
-                ))
-              )}
-            </section>
-            <div className="product-more-infos">
-              <h1>{data.product_name}</h1>
-              <p>{data.product_description}</p>
-              <div className="offer-owner">
-                <img
-                  src={
-                    data.owner.account.avatar?.url
-                      ? data.owner.account.avatar.url
-                      : avatar
-                  }
-                  alt="avatar"
-                />
-                <h2>{data.owner.account.username}</h2>
-              </div>
-            </div>
-            <button
-              className="buy-button"
-              onClick={() => {
-                navigate("/payment", {
-                  state: {
-                    productName: data.product_name,
-                    price: data.product_price,
-                  },
-                });
-              }}
-            >
-              Acheter
-            </button>
-          </div>
+    <section className="offer">
+      <div className="offer__container">
+        <div className="offer__image">
+          <img src={data.product_image.secure_url} alt="Product" />
         </div>
-      </section>
-    </>
+        <div className="offer__details">
+          <span className="offer__price">{data.product_price} €</span>
+          <section className="offer__details-info">
+            {data.product_details.map((elem) =>
+              Object.keys(elem).map((key) => (
+                <p key={key}>
+                  <span className="offer__info-key">{key}</span>
+                  <span className="offer__info-value">{elem[key]}</span>
+                </p>
+              ))
+            )}
+          </section>
+          <div className="offer__description">
+            <h1>{data.product_name}</h1>
+            <p>{data.product_description}</p>
+            <div className="offer__owner">
+              <img
+                src={
+                  data.owner.account.avatar?.url
+                    ? data.owner.account.avatar.url
+                    : avatar
+                }
+                alt="Owner avatar"
+              />
+              <h2>{data.owner.account.username}</h2>
+            </div>
+          </div>
+          <button
+            className="offer__buy-button"
+            onClick={() =>
+              navigate("/payment", {
+                state: {
+                  productName: data.product_name,
+                  price: data.product_price,
+                },
+              })
+            }
+          >
+            Acheter
+          </button>
+        </div>
+      </div>
+    </section>
   );
 };
 

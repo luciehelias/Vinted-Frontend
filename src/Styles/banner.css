@@ -44,17 +44,17 @@
   .banner img {
     width: 100%;
   }
+  .banner h1 {
+    font-size: 30px;
+  }
+  .banner button {
+    width: auto;
+    margin-top: 20px;
+  }
   .banner-container {
-    position: absolute;
-    margin: 10px;
-    background-color: #ffffff;
-    height: 100px;
-    width: 360px;
-    border-radius: 3px;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 0 0 2px #1111113d;
+    margin: 20px;
+    height: auto;
+    width: auto;
+    padding: 30px;
   }
 }
